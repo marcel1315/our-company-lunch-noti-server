@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.marceldev.ourcompanylunchnoti.document.PushNotificationToken;
 import com.marceldev.ourcompanylunchnoti.dto.NotificationMessageDto;
+import com.marceldev.ourcompanylunchnoti.exception.TokenNotFoundException;
 import com.marceldev.ourcompanylunchnoti.repository.PushNotificationTokenRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -30,13 +31,15 @@ public class MessageConsumer {
 
   @KafkaListener(topics = COMMENT_WRITE_TOPIC_NAME, groupId = GROUP_ID)
   public void commentWriteListener(String message) {
+    log.debug("Message received: {}", message);
+
     try {
       NotificationMessageDto dto = objectMapper
           .readValue(message, NotificationMessageDto.class);
 
       PushNotificationToken token = pushNotificationTokenRepository
           .findByMemberId(dto.getReceiverId())
-          .orElseThrow(RuntimeException::new);
+          .orElseThrow(TokenNotFoundException::new);
 
       fcmPushNotification.sendPushNotification(
           token.getToken(),
@@ -45,7 +48,7 @@ public class MessageConsumer {
       );
 
       log.debug(
-          "sender: {}, receiver: {}, content: {}",
+          "Message consumed. sender: {}, receiver: {}, content: {}",
           dto.getSenderId(), dto.getReceiverId(), dto.getContent()
       );
     } catch (Exception e) {
