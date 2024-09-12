@@ -1,0 +1,9 @@
+{
+  "senderId": 6,
+  "receiverId": 5,
+  "dinerId": 8,
+  "senderName": "Marcel",
+  "receiverName": "John",
+  "dinerName": "Sim noodle 1",
+  "content": "Very delicious"
+}

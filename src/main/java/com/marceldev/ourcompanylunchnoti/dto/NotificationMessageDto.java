@@ -1,4 +1,4 @@
-package hello.ourcompanylunchnotiserver.dto;
+package com.marceldev.ourcompanylunchnoti.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

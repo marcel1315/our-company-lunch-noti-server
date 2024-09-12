@@ -1,4 +1,4 @@
-package hello.ourcompanylunchnotiserver;
+package com.marceldev.ourcompanylunchnoti;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

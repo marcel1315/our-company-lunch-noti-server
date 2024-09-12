@@ -1,4 +1,4 @@
-package hello.ourcompanylunchnotiserver.config;
+package com.marceldev.ourcompanylunchnoti.config;
 
 import java.util.HashMap;
 import java.util.Map;
