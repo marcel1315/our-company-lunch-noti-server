@@ -43,7 +43,6 @@ jobs:
       - name: Download configuration files from S3
         run: |
           mkdir -p ./config
-          mkdir -p ./mongo
           aws s3 cp --region ap-northeast-2 s3://${{ vars.S3_BUCKET_NAME }}/${{ env.FIREBASE_JSON }} ./config/          
           aws s3 cp --region ap-northeast-2 s3://${{ vars.S3_BUCKET_NAME }}/init-mongo.mac.js ./mongo/          
           aws s3 cp --region ap-northeast-2 s3://${{ vars.S3_BUCKET_NAME }}/application-${{ env.SPRING_PROFILE }}.yml ./src/main/resources/
