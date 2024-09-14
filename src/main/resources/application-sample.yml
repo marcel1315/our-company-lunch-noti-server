@@ -2,7 +2,7 @@ spring:
   data:
     mongodb:
       uri: mongodb://ourcompanylunchnotiuser:a1234@localhost:27017/ourcompanylunchnoti
-
-jwt:
-  secret:
-  expired-in-hour:
+common:
+  jwt:
+    secret:
+    expired-in-hour:

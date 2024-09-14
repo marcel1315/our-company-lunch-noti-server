@@ -15,7 +15,7 @@ import org.springframework.kafka.core.DefaultKafkaConsumerFactory;
 @Configuration
 public class KafkaConsumerConfig {
 
-  private static final String BOOTSTRAP_SERVER = "localhost:9092";
+  private static final String BOOTSTRAP_SERVER = "localhost:9093";
 
   @Bean
   public ConsumerFactory<String, String> consumerFactory() {
