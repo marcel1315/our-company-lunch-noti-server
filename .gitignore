@@ -38,4 +38,7 @@ out/
 
 ### Config ###
 /config/
-application-local.yml
+src/main/resources/application-local.yml
+src/main/resources/application-mac.yml
+mongo/init-mongo.mac.js
+docker-compose.mac.yml
