@@ -5,3 +5,8 @@ spring:
     name: our-company-lunch-noti-server
   profiles:
     active: local
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
