@@ -39,6 +39,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-admin:9.3.0'
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
+    implementation 'io.micrometer:micrometer-registry-prometheus'
 
     testImplementation 'com.github.marcel1315:our-company-lunch-common:0.0.10'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
